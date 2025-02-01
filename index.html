@@ -11,7 +11,8 @@
 
   <script>
     document.getElementById('signupButton').addEventListener('click', () => {
-      fetch('https://corsproxy.io/?url=https://apitest1.glitch.me/api/signup', {
+      // Replace with your Glitch project's actual URL
+      fetch('https://apitest1.glitch.me/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -24,9 +25,11 @@
       .then(response => response.json())
       .then(data => {
         console.log(data);  // Log the response from the server
+        alert(`Response from server: ${JSON.stringify(data)}`);  // Display a response alert
       })
       .catch(error => {
         console.error('Error:', error);  // Log any errors that occur
+        alert(`Error: ${error}`);  // Display an error alert
       });
     });
   </script>
